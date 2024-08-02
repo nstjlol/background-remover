@@ -1,0 +1,5 @@
+.venv
+util/models/*
+*.mp4
+*.mkv
+webcamCmd.txt
