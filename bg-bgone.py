@@ -34,6 +34,9 @@ def remove_background(i_dir, o_dir, square):
         running_mode = vision_running_mode.VIDEO,
         output_category_mask = True)
     
+    audio_path = "temp_audio.aac"
+    extract_audio(i_dir, audio_path)
+    
     frames, timestamps, fps = video_to_mediapipe(i_dir)
     
     with image_segmenter.create_from_options(options) as segmenter:
@@ -56,9 +59,13 @@ def remove_background(i_dir, o_dir, square):
         temp_video_path = "temp.mp4"
         save_video(segmented_frames, fps, temp_video_path)
         
-        reencode_video(temp_video_path, o_dir, fps)
+        reencode_video(temp_video_path, "temp_reencoded.mp4", fps)
+        
+        combine_audio_video("temp_reencoded.mp4", audio_path, o_dir, fps)
         
         os.remove(temp_video_path)
+        os.remove("temp_reencoded.mp4")
+        os.remove(audio_path)
     
 def video_to_mediapipe(i_dir):
     frames = []
@@ -80,6 +87,18 @@ def video_to_mediapipe(i_dir):
     cap.release()
         
     return frames, timestamps, fps
+
+def extract_audio(input_video_path, audio_output_path):
+    command = [
+        'ffmpeg', '-y', '-i', input_video_path, '-q:a', '0', '-map', 'a', audio_output_path
+    ]
+    subprocess.run(command)
+
+def combine_audio_video(processed_video_path, audio_path, final_output_path, fps):
+    command = [
+        'ffmpeg', '-y', '-i', processed_video_path, '-i', audio_path, '-c:v', 'copy', '-c:a', 'aac', '-strict', 'experimental', '-b:a', '192k', '-shortest', final_output_path
+    ]
+    subprocess.run(command)
 
 def save_video(frames, fps, temp_path):
     height, width, _ = frames[0].shape
