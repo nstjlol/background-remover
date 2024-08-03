@@ -17,8 +17,8 @@ args = parser.parse_args()
 BG_COLOR = (0, 255, 0) # green
 MASK_COLOR = (255, 255, 255) # white
 
-landscape_model_dir = os.path.join(os.path.abspath(os.path.curdir),'util/models/selfie_segmenter_landscape.tflite')
-square_model_dir = os.path.join(os.path.abspath(os.path.curdir),'util/models/selfie_segmenter.tflite')
+landscape_model_dir = os.path.join(os.path.abspath(os.path.curdir),'models/selfie_segmenter_landscape.tflite')
+square_model_dir = os.path.join(os.path.abspath(os.path.curdir),'models/selfie_segmenter.tflite')
 
 def remove_background(i_dir, o_dir, square):
     model_dir = square_model_dir if square else landscape_model_dir
