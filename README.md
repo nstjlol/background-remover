@@ -54,6 +54,7 @@ python bg-bgone.py [input] [output] [options]
 ## Future Plans
 - [ ] Add support for more video output formats.
 - [ ] Add support for other models.
+- [ ] Option to chose replacement color, such as blue, for bluescreening.
 
 ## License
 
