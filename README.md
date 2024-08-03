@@ -31,10 +31,11 @@ wget -O models/selfie_segmenter_landscape.tflite https://storage.googleapis.com/
 - **Windows**: Download from [FFmpeg website](https://www.ffmpeg.org/download.html) and follow the installation instructions. **Ensure FFmpeg is in your system environment path**
 - **Linux**: Install using a package manager, e.g., `sudo apt-get install ffmpeg`.
 - **macOS**: Install using Homebrew, e.g., `brew install ffmpeg`.
+- 
 ## Usage
 Removing Background from a Video
 ```
-python remove_background.py [input] [output] [options]
+python bg-bgone.py [input] [output] [options]
 ```
 - `input`: Path to the input video file.
 - `output`: Path to the output video file.
