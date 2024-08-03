@@ -58,6 +58,7 @@ python bg-bgone.py [input] [output] [options]
 Below are a list of features I would like to add as I find the time to do so. This script was made in only a few hours for a friend, so it isn't my cleanest work.
 - [ ] Add support for more video output formats.
 - [ ] Add support for other models.
+- [ ] Use FFmpeg python module, or solve my issue with opencv not writing to mp4, if possible.
 - [ ] Option to chose replacement color, such as blue, for bluescreening.
 - [ ] Resource Optimizations.
 
