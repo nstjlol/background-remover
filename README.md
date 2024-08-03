@@ -1,4 +1,4 @@
-# Background Remover
+# BG-BGONE - A Virtual Green Screening Tool
 This project is a Python script that removes the background from videos and outputs the result in mp4 format. The background is replaced with a green screen, making it suitable for chromakeying in video editing software.
 
 ## Features
