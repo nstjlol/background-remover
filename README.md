@@ -52,9 +52,11 @@ python bg-bgone.py [input] [output] [options]
 **Background Replacement**: The background is replaced with the color green, making it suitable for chromakeying in video editing software.
 
 ## Future Plans
+Below are a list of features I would like to add as I find the time to do so. This script was made in only a few hours for a friend, so it isn't my cleanest work.
 - [ ] Add support for more video output formats.
 - [ ] Add support for other models.
 - [ ] Option to chose replacement color, such as blue, for bluescreening.
+- [ ] Resource Optimizations.
 
 ## License
 
