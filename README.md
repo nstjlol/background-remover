@@ -28,9 +28,12 @@ This project is a Python script that removes the background from videos and outp
     wget -O models/selfie_segmenter_landscape.tflite https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter_landscape/float16/latest/selfie_segmenter_landscape.tflite
     ```
 4. Install FFmpeg
-    - **Windows**: Download from [FFmpeg website](https://www.ffmpeg.org/download.html) and follow the installation instructions. **Ensure FFmpeg is in your system environment path**
+    - **Windows**: Download from [FFmpeg website](https://www.ffmpeg.org/download.html) and follow the installation instructions.
     - **Linux**: Install using a package manager, e.g., `sudo apt-get install ffmpeg`.
     - **macOS**: Install using Homebrew, e.g., `brew install ffmpeg`.
+
+> [!IMPORTANT]
+> **On Windows Systems ensure FFmpeg is in your system environment path, or python will not be able to find it.**
 
 ## Usage
 Removing Background from a Video
