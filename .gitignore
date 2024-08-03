@@ -1,5 +1,5 @@
 .venv
-util/models/*
+models/*
 *.mp4
 *.mkv
 webcamCmd.txt
